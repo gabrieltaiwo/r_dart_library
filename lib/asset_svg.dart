@@ -27,7 +27,6 @@ class AssetSvg extends ImageProvider<AssetSvg> {
     return SynchronousFuture<AssetSvg>(this);
   }
 
-  @override
   ImageStreamCompleter load(AssetSvg key, nil) {
     return OneFrameImageStreamCompleter(
       _loadAsync(key),
@@ -39,6 +38,7 @@ class AssetSvg extends ImageProvider<AssetSvg> {
 
     var rawSvg = await rootBundle.loadString(asset);
     // final DrawableRoot svgRoot = await Svg().fromSvgString(rawSvg, rawSvg);
+    // ignore: deprecated_member_use
     final scale = window.devicePixelRatio;
     // final ui.Picture picture = svgRoot.toPicture(
     //   size: Size(
